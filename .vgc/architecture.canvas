@@ -1,0 +1,168 @@
+{
+  "vv": {
+    "name": "Grok CLI Architecture",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "core",
+      "type": "Core",
+      "x": 400,
+      "y": 50,
+      "width": 120,
+      "height": 80,
+      "label": "Core\nsrc/index.ts",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "agent",
+      "type": "Agent",
+      "x": 200,
+      "y": 200,
+      "width": 120,
+      "height": 80,
+      "label": "AI Agent\nsrc/agent/",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "grok-client",
+      "type": "Agent",
+      "x": 600,
+      "y": 200,
+      "width": 120,
+      "height": 80,
+      "label": "Grok Client\nsrc/grok/",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "ui",
+      "type": "UI",
+      "x": 397,
+      "y": 349,
+      "width": 120,
+      "height": 80,
+      "label": "UI Components\nsrc/ui/",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tools",
+      "type": "Tools",
+      "x": 598,
+      "y": 349,
+      "width": 120,
+      "height": 80,
+      "label": "Tools\nsrc/tools/",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "mcp",
+      "type": "MCP",
+      "x": 201,
+      "y": 352,
+      "width": 120,
+      "height": 80,
+      "label": "MCP\nsrc/mcp/",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "utils",
+      "type": "Utils",
+      "x": 397,
+      "y": 655,
+      "width": 120,
+      "height": 80,
+      "label": "Utils\nsrc/utils/",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "hooks",
+      "type": "Utils",
+      "x": 397,
+      "y": 466,
+      "width": 120,
+      "height": 80,
+      "label": "Hooks\nsrc/hooks/",
+      "vv": {
+        "nodeType": "group",
+        "shape": "rectangle"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "core-agent",
+      "type": "DataFlow",
+      "fromNode": "core",
+      "toNode": "agent"
+    },
+    {
+      "id": "core-grok",
+      "type": "DataFlow",
+      "fromNode": "core",
+      "toNode": "grok-client"
+    },
+    {
+      "id": "agent-ui",
+      "type": "EventFlow",
+      "fromNode": "agent",
+      "toNode": "ui"
+    },
+    {
+      "id": "grok-tools",
+      "type": "DataFlow",
+      "fromNode": "grok-client",
+      "toNode": "tools"
+    },
+    {
+      "id": "ui-hooks",
+      "type": "Dependency",
+      "fromNode": "ui",
+      "toNode": "hooks"
+    },
+    {
+      "id": "tools-utils",
+      "type": "Dependency",
+      "fromNode": "tools",
+      "toNode": "utils"
+    },
+    {
+      "id": "mcp-utils",
+      "type": "Dependency",
+      "fromNode": "mcp",
+      "toNode": "utils"
+    },
+    {
+      "id": "agent-mcp",
+      "type": "DataFlow",
+      "fromNode": "agent",
+      "toNode": "mcp"
+    },
+    {
+      "id": "hooks-utils",
+      "type": "Dependency",
+      "fromNode": "hooks",
+      "toNode": "utils"
+    }
+  ]
+}
