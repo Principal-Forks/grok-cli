@@ -22,7 +22,8 @@
     "start:bun": "bun run dist/index.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit",
-    "install:bun": "bun install"
+    "install:bun": "bun install",
+    "prepare": "husky"
   },
   "keywords": [
     "cli",
@@ -57,6 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
     "eslint": "^9.31.0",
+    "husky": "^9.1.7",
     "tsx": "^4.0.0",
     "typescript": "^5.3.3"
   },

@@ -42,20 +42,20 @@ edgeComponents:
   DataFlow:
     name: "Data Flow"
     description: "Data flow between components"
-    color: "#333333"
+    color: "#3b82f6"
     style: "solid"
     arrow: "true"
   
   EventFlow:
     name: "Event Flow"
     description: "Event-driven communication"
-    color: "#666666"
+    color: "#10b981"
     style: "dashed"
     arrow: "true"
   
   Dependency:
     name: "Dependency"
     description: "Component dependency relationship"
-    color: "#999999"
+    color: "#f59e0b"
     style: "dotted"
     arrow: "true"
