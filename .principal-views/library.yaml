@@ -1,61 +1,57 @@
 version: "1.0.0"
-name: "Grok CLI Architecture"
 
 nodeComponents:
   Core:
-    name: "Core Components"
     description: "Main application entry and core functionality"
+    defaultLabel: "Core Components"
     color: "#FF6B6B"
     shape: "rectangle"
   
   Agent:
-    name: "AI Agent"
     description: "Grok AI agent implementation"
+    defaultLabel: "AI Agent"
     color: "#4ECDC4"
     shape: "rectangle"
   
   UI:
-    name: "User Interface"
     description: "React-based terminal UI components"
+    defaultLabel: "User Interface"
     color: "#45B7D1"
     shape: "rectangle"
   
   Tools:
-    name: "Tools System"
     description: "Built-in tools for file operations, editing, etc."
+    defaultLabel: "Tools System"
     color: "#96CEB4"
     shape: "rectangle"
   
   MCP:
-    name: "MCP Integration"
     description: "Model Context Protocol client and configuration"
+    defaultLabel: "MCP Integration"
     color: "#FFEAA7"
     shape: "rectangle"
   
   Utils:
-    name: "Utilities"
     description: "Shared utility functions and services"
+    defaultLabel: "Utilities"
     color: "#DDA0DD"
     shape: "rectangle"
 
 edgeComponents:
   DataFlow:
-    name: "Data Flow"
     description: "Data flow between components"
     color: "#3b82f6"
     style: "solid"
-    arrow: "true"
+    directed: true
   
   EventFlow:
-    name: "Event Flow"
     description: "Event-driven communication"
     color: "#10b981"
     style: "dashed"
-    arrow: "true"
+    directed: true
   
   Dependency:
-    name: "Dependency"
     description: "Component dependency relationship"
     color: "#f59e0b"
     style: "dotted"
-    arrow: "true"
+    directed: true
